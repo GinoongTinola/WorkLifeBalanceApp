@@ -1,25 +1,137 @@
+/* -------------------------------------------------------------------
+ * 1. COLOR PALETTE & VARIABLES
+ * Palette: #FAF3E1, #F5E7C6, #FF6D1F, #222222
+ * ------------------------------------------------------------------- */
+:root {
+  --bg-primary: #FAF3E1;      /* Main body background (Light Cream) */
+  --bg-secondary: #F5E7C6;    /* Card background (Light Beige) */
+  --accent-primary: #FF6D1F;  /* Action/Emphasis color (Vibrant Orange) */
+  --text-primary: #222222;    /* Main text color (Dark Charcoal) */
+  --text-secondary: #555555;  /* Subtle gray for time labels/details */
+  --divider-color: #E0D8C3;   /* Very light divider */
+}
+
+/* -------------------------------------------------------------------
+ * 2. GLOBAL & TYPOGRAPHY
+ * ------------------------------------------------------------------- */
 body {
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif; /* Use a modern, imported sans-serif font */
+  padding: 25px; /* Increase overall padding for more 'cream space' */
+  margin: 0;
+  line-height: 1.6;
+}
+
+h1.app-title { /* For "Work-Life Balance Tracker" */
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.subtitle { /* For "Your Daily Schedule" */
+    color: var(--accent-primary);
+    font-size: 1.25em;
+    font-weight: 700;
     text-align: center;
+    margin-bottom: 15px;
+}
+
+/* -------------------------------------------------------------------
+ * 3. CARD & LAYOUT STYLING
+ * Applies soft, rounded card design to schedule and alert.
+ * ------------------------------------------------------------------- */
+.card-container {
+  background-color: var(--bg-secondary);
+  border-radius: 20px; /* Highly rounded corners for soft, modern look */
+  padding: 30px 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(34, 34, 34, 0.05); /* Subtle lift */
+}
+
+/* -------------------------------------------------------------------
+ * 4. SCHEDULE LIST STYLING
+ * Uses Flexbox for clean alignment.
+ * ------------------------------------------------------------------- */
+.schedule-list {
+    list-style: none; /* Remove default dots/bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between; /* Puts time and activity on opposite sides */
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--divider-color); 
+}
+
+.schedule-item:last-child {
+    border-bottom: none; /* No divider on the last item */
+}
+
+.time-range {
+    color: var(--text-secondary); 
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.activity-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: right;
+}
+
+/* -------------------------------------------------------------------
+ * 5. COFFEE ALERT STYLING
+ * Uses the primary accent color for immediate visual emphasis.
+ * ------------------------------------------------------------------- */
+.coffee-alert {
+    background-color: var(--bg-secondary); 
+    border-radius: 20px;
     padding: 20px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the icon and text */
+    border: 2px solid var(--accent-primary); /* Bold border using the accent color */
 }
 
-h1, h2 {
-    color: #ffcc00;
+.alert-icon {
+    font-size: 1.6em; 
+    margin-right: 15px;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #ffcc00;
-    color: #121212;
+.alert-text {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+/* -------------------------------------------------------------------
+ * 6. BUTTON STYLING
+ * ------------------------------------------------------------------- */
+.update-button {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary); /* Light text on the orange button */
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px; 
     cursor: pointer;
-    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-top: 30px;
+    width: 100%; /* Make it fill the width for mobile-friendly design */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    
+    /* Smooth transition for modern interaction */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-    background-color: #ffaa00;
+.update-button:hover {
+    background-color: #e6621c; /* Slightly darker orange on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
