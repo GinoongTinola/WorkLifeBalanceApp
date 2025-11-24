@@ -4,8 +4,8 @@ const updateBtn = document.getElementById('update');
 
 // Schedule
 const wakeUp = 5;
-const commuteStart = 5;
-const commuteEnd = 7;
+const commuteStart = 6;
+const commuteEnd = 7:30;
 const workStart = 8;
 const workEnd = 17;
 const break1Start = 11.5; // 11:30 AM
@@ -21,7 +21,7 @@ function updateSchedule() {
 
     scheduleList.innerHTML = `
         <li>Wake-up: 5:00 AM</li>
-        <li>Commute: 5:00 AM - 7:00 AM</li>
+        <li>Commute: 6:00 AM - 7:30 AM</li>
         <li>Work: 8:00 AM - 5:00 PM</li>
         <li>Break 1: 11:30 AM - 12:30 PM</li>
         <li>Break 2: 3:30 PM - 4:30 PM</li>
@@ -35,7 +35,7 @@ function updateSchedule() {
     } else if(hour >= wakeUp && hour < break1Start){
         coffeeAlert.textContent = "☕ You can have coffee now.";
     } else {
-        coffeeAlert.textContent = "";
+        coffeeAlert.textContent = " Awat ka ya";
     }
 }
 
